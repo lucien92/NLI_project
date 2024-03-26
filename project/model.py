@@ -50,7 +50,7 @@ class allMiniLMModel:
         self.valid_dataloader = self._load_dataloader(self.valid_dataset)
         self.test_dataloader = self._load_dataloader(self.test_dataset)
         self.train()
-        self.test()
+        #self.test()
     
     def _load_model(self):
         config = AutoConfig.from_pretrained(self.model_name, num_labels=self.num_labels)
@@ -70,7 +70,7 @@ class allMiniLMModel:
             logging_steps=10,
             evaluation_strategy="steps",
             eval_steps=10,
-            save_steps=10,
+            save_steps=100,
             seed=self.seed,
             report_to="wandb"  # Ensure wandb is used for logging
         )

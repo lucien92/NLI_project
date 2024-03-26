@@ -21,7 +21,7 @@ Transformers à utiliser
 All-mini-v6: This is a sentence-transformers model: It maps sentences & paragraphs to a 384 dimensional dense vector space and can be used for tasks like clustering or semantic search.
 
 
-- choose cost function for our problem
+- choose cost function for our problem --> accuracy
 
 Les labels sont 0, 1 ou 2
 
@@ -36,6 +36,8 @@ Les labels sont 0, 1 ou 2
 - essayer Roberta ❌
 
 - faire finetune d'hyperparamètres ❌
+
+- gérer les warnings ❌
 
 3) Rapport ❌
 

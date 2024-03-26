@@ -5,3 +5,4 @@ torch
 scikit-learn
 transformers
 wandb
+python-dotenv
