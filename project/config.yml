@@ -2,7 +2,7 @@ training_config:
   model_name: "sentence-transformers/all-MiniLM-L6-v2"
   num_labels: 3
   output_dir: "project/results"
-  batch_size: 8
+  batch_size: 30
   epochs: 5
   learning_rate: 0.0001
   seed: 42
@@ -15,4 +15,3 @@ tokenizer:
 wandb_config:
   project: "huggingface"
   entity: "NLI_Project"
-  api: "f3b43f15e4b9d81f71b4be703dcc32e5d01189f2"

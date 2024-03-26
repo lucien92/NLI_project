@@ -7,8 +7,11 @@ import yaml
 from project.model import allMiniLMModel
 from project.data_utils import PreProcessor, Filter
 from datasets import load_dataset
+from dotenv import load_dotenv
+
 
 if __name__ == "__main__":
+    load_dotenv()
     
     snli = load_dataset("snli")
 
@@ -49,5 +52,5 @@ if __name__ == "__main__":
     wandb_entity = config_wandb["entity"]
     
     # %%
-    model = allMiniLMModel(model_name, num_labels, output_dir, train_dataset_processed, validation_dataset_processed, test_dataset_processed, batch_size, epochs, learning_rate, seed, warmup_steps,wandb_project_name=None, wandb_api_key=None)
+    model = allMiniLMModel(model_name, num_labels, output_dir, train_dataset_processed, validation_dataset_processed, test_dataset_processed, batch_size, epochs, learning_rate, seed, warmup_steps,wandb_project_name=wandb_project_name, wandb_entity=wandb_entity)
 
