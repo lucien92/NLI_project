@@ -8,7 +8,7 @@ from torch.utils.data import DataLoader
 import wandb
 
 class allMiniLMModel:
-    def __init__(self, model_name, num_labels, output_dir, train_dataset, valid_dataset, test_dataset, batch_size, epochs, learning_rate, seed, warmup_steps, wandb_project_name=None, wandb_api_key=None):
+    def __init__(self, model_name, num_labels, output_dir, train_dataset, valid_dataset, test_dataset, batch_size, epochs, learning_rate, seed, warmup_steps, wandb_project_name=None, wandb_api_key=None, wandb_entity=None):
         self.model_name = model_name
         self.num_labels = num_labels
         self.output_dir = output_dir
@@ -21,6 +21,7 @@ class allMiniLMModel:
         self.seed = seed
         self.wandb_project_name = wandb_project_name
         self.warmup_steps = warmup_steps
+        self.wandb_entity = wandb_entity
 
           
         if wandb_api_key:
@@ -31,7 +32,8 @@ class allMiniLMModel:
         # Initialize wandb
         if self.wandb_project_name:
             wandb.login()  # Utilisez la clé API de l'environnement ou celle passée directement
-            wandb.init(project=self.wandb_project_name, config={
+            wandb.init(project=self.wandb_project_name, entity=self.wandb_entity,
+            config={
                 "model_name": self.model_name,
                 "num_labels": self.num_labels,
                 "output_dir": self.output_dir,
