@@ -9,9 +9,11 @@ from project.data_utils import PreProcessor, Filter
 from datasets import load_dataset
 
 from dotenv import load_dotenv
-load_dotenv()
+
 
 if __name__ == "__main__":
+
+    load_dotenv()
     
     snli = load_dataset("snli")
 
