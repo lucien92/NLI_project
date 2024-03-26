@@ -8,17 +8,20 @@ from torch.utils.data import DataLoader
 import wandb
 
 class allMiniLMModel:
-    def __init__(self, model_name, num_labels, output_dir, train_dataset, test_dataset, batch_size, epochs, learning_rate, seed, wandb_project_name=None, wandb_api_key=None):
+    def __init__(self, model_name, num_labels, output_dir, train_dataset, valid_dataset, test_dataset, batch_size, epochs, learning_rate, seed, warmup_steps, wandb_project_name=None, wandb_api_key=None):
         self.model_name = model_name
         self.num_labels = num_labels
         self.output_dir = output_dir
         self.train_dataset = train_dataset
+        self.valid_dataset = valid_dataset
         self.test_dataset = test_dataset
         self.batch_size = batch_size
         self.epochs = epochs
         self.learning_rate = learning_rate
         self.seed = seed
         self.wandb_project_name = wandb_project_name
+        self.warmup_steps = warmup_steps
+
         
         if wandb_api_key:
             os.environ["WANDB_API_KEY"] = wandb_api_key
@@ -35,12 +38,14 @@ class allMiniLMModel:
                 "batch_size": self.batch_size,
                 "epochs": self.epochs,
                 "learning_rate": self.learning_rate,
-                "seed": self.seed
+                "seed": self.seed,
+                "warmup_steps": self.warmup_steps
             })
         
         self.model = self._load_model()
         self.trainer = self._load_trainer()
         self.train_dataloader = self._load_dataloader(self.train_dataset)
+        self.valid_dataloader = self._load_dataloader(self.valid_dataset)
         self.test_dataloader = self._load_dataloader(self.test_dataset)
         self.train()
         self.test()
@@ -57,7 +62,7 @@ class allMiniLMModel:
             num_train_epochs=self.epochs,
             per_device_train_batch_size=self.batch_size,
             per_device_eval_batch_size=self.batch_size,
-            warmup_steps=500,
+            warmup_steps=self.warmup_steps,
             weight_decay=0.01,
             logging_dir='./logs',
             logging_steps=10,
@@ -72,7 +77,7 @@ class allMiniLMModel:
             args=training_args,
             compute_metrics=self._compute_metrics,
             train_dataset=self.train_dataset,
-            eval_dataset=self.test_dataset
+            eval_dataset=self.valid_dataset
         )
         return trainer
     
