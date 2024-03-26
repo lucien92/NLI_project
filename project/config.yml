@@ -1,0 +1,7 @@
+training_config:
+  batch_size: 128
+  output_dir: ""
+wandb_config:
+  project: "diarization_finetuning_ina"
+  entity: "dinum-dia"
+  api: "f3b43f15e4b9d81f71b4be703dcc32e5d01189f2"

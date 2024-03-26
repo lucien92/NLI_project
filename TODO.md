@@ -16,6 +16,10 @@ Transformers à utiliser
 
 [github inspirant](https://github.com/sarrabenyahia/NLI-SNLI)
 
+[lien vers modèle hugging face](https://huggingface.co/models?dataset=dataset:multi_nli)
+
+All-mini-v6: This is a sentence-transformers model: It maps sentences & paragraphs to a 384 dimensional dense vector space and can be used for tasks like clustering or semantic search.
+
 
 - choose cost function for our problem
 
