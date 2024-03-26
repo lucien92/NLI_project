@@ -2,11 +2,10 @@ training_config:
   model_name: "sentence-transformers/all-MiniLM-L6-v2"
   num_labels: 3
   output_dir: "project/results"
-  batch_size: 30
+  batch_size: 128
   epochs: 5
   learning_rate: 0.0001
   seed: 42
-  max_length: 128
   warmup_steps: 500
 
 tokenizer:
