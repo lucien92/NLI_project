@@ -43,10 +43,10 @@ Les labels sont 0, 1 ou 2
 
 -essayer SGD en créant une classe qui hérite de Trainer et en mettant cette classe à la place de trainer dans model
 
-3) Play with the model
+3) Play with the model ✅
 
 Faire un notebook où l'utilisateur rentre 2 phrases et on applique le modèle pour faire une prédiction.
 
-3) Rapport ❌
+4) Mettre des insights visuels du modèle, de son utilisation de l'attention...❌
 
-- Visualisation du mécanisme d'attention ❌
+5) Expliquer les choix de tous les hyperparamètres, de notre modèle...
