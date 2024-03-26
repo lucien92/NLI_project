@@ -1,9 +1,11 @@
 #venv
 
-.venv
+venv
 
 __pycache__
 
 wandb
 
 results
+
+.env

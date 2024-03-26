@@ -8,6 +8,9 @@ from project.model import allMiniLMModel
 from project.data_utils import PreProcessor, Filter
 from datasets import load_dataset
 
+from dotenv import load_dotenv
+load_dotenv()
+
 if __name__ == "__main__":
     
     snli = load_dataset("snli")

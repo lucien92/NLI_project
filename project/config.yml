@@ -6,13 +6,12 @@ training_config:
   epochs: 5
   learning_rate: 0.0001
   seed: 42
-  max_length: 128
   warmup_steps: 500
 
 tokenizer:
-  max_length: 384
+  max_length: 128
 
 wandb_config:
-  project: "diarization_finetuning_ina"
-  entity: "dinum-dia"
-  api: "f3b43f15e4b9d81f71b4be703dcc32e5d01189f2"
+  project: "huggingface"
+  entity: "NLI_Project"
+  #api: "f3b43f15e4b9d81f71b4be703dcc32e5d01189f2"
