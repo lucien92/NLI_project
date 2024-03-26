@@ -13,6 +13,6 @@ tokenizer:
   max_length: 384
 
 wandb_config:
-  project: "diarization_finetuning_ina"
-  entity: "dinum-dia"
+  project: "NLI_Project-org"
+  entity: "NLI_Project"
   api: "f3b43f15e4b9d81f71b4be703dcc32e5d01189f2"
