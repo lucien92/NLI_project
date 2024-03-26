@@ -4,8 +4,8 @@ import numpy as np
 import pandas as pd
 import random
 import yaml
-from model import allMiniLMModel
-from data_utils import PreProcessor, Filter
+from project.model import allMiniLMModel
+from project.data_utils import PreProcessor, Filter
 from datasets import load_dataset
 
 if __name__ == "__main__":
@@ -42,8 +42,10 @@ if __name__ == "__main__":
     warmup_steps=training_config["warmup_steps"] #grosses variations de learning rate au début
     #weight_decay=training_config["weight_decay"] #poids de la régularisation L2
 
-    config_wandb = config["wandb"]
+    config_wandb = config["wandb_config"]
     wandb_project_name=config_wandb["project"]
     wandb_entity = config_wandb["entity"]
-
+    
+    # %%
     model = allMiniLMModel(model_name, num_labels, output_dir, train_dataset_processed, validation_dataset_processed, test_dataset_processed, batch_size, epochs, learning_rate, seed, warmup_steps,wandb_project_name=None, wandb_api_key=None)
+
