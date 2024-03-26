@@ -22,7 +22,7 @@ class PreProcessor(TransformerMixin, BaseEstimator):
     def __init__(
         self,
         model_name="sentence-transformers/all-MiniLM-L6-v2",
-        max_length=128,
+        max_length=384, # max length des inputs du modèle qu'on a choisi
         truncation=True,
         padding=True,
     ) -> None:
@@ -33,7 +33,7 @@ class PreProcessor(TransformerMixin, BaseEstimator):
         self.label_encoder = LabelEncoder()
 
     def fit(self, X, y=None):
-        self.label_encoder.fit(X["label"])
+        self.label_encoder.fit(X["label"]) 
         return self
 
     def transform(self, X):
@@ -44,7 +44,7 @@ class PreProcessor(TransformerMixin, BaseEstimator):
             padding=self.padding,
             truncation=self.truncation,
             max_length=self.max_length,
-        ) #permet de tokeniser les phrases, ce qui signifie de les transformer en liste de tokens, i.e de mots
+        ) #permet de tokeniser en mettant les deux phrases côte à côte
 
         # Convert inputs and labels to list of dictionaries
         dataset_inputs = {
