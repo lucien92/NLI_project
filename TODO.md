@@ -24,3 +24,19 @@ All-mini-v6: This is a sentence-transformers model: It maps sentences & paragrap
 - choose cost function for our problem
 
 Les labels sont 0, 1 ou 2
+
+2) Implementation
+
+- dataloader, model, training, config: ✅
+
+- wandb ✅
+
+- script pour les sbatch ❌
+
+- essayer Roberta ❌
+
+- faire finetune d'hyperparamètres ❌
+
+3) Rapport ❌
+
+- Visualisation du mécanisme d'attention ❌

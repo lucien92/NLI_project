@@ -21,9 +21,13 @@ if __name__ == "__main__":
     test_dataset = load_dataset("snli", split='test')
     validation_dataset = load_dataset("snli", split='validation')
 
-
+    config = yaml.safe_load(open("project/config.yml", "r"))
+    tokenizer_config = config["tokenizer"]
+    training_config = config["training_config"]
+    model_name=training_config["model_name"]
+    
     filter = Filter()
-    preprocessor = PreProcessor()
+    preprocessor = PreProcessor(max_length=tokenizer_config["max_length"], model_name=model_name)
 
     train_dataset_filtered = filter.transform(train_dataset)
     test_dataset_filtered = filter.transform(test_dataset)
@@ -33,10 +37,8 @@ if __name__ == "__main__":
     test_dataset_processed, labels_test = preprocessor.transform(test_dataset_filtered)
     validation_dataset_processed, labels_val = preprocessor.transform(validation_dataset_filtered)
 
-    config = yaml.safe_load(open("project/config.yml", "r"))
-    training_config = config["training_config"]
 
-    model_name=training_config["model_name"] 
+    
     num_labels=training_config["num_labels"] 
     output_dir = training_config["output_dir"]
 
@@ -52,5 +54,5 @@ if __name__ == "__main__":
     wandb_entity = config_wandb["entity"]
     
     # %%
-    model = allMiniLMModel(model_name, num_labels, output_dir, train_dataset_processed, validation_dataset_processed, test_dataset_processed, batch_size, epochs, learning_rate, seed, warmup_steps,wandb_project_name=None, wandb_api_key=None)
+    model = allMiniLMModel(model_name, num_labels, output_dir, train_dataset_processed, validation_dataset_processed, test_dataset_processed, batch_size, epochs, learning_rate, seed, warmup_steps,wandb_project_name=wandb_project_name, wandb_entity=wandb_entity, wandb_api_key=None)
 

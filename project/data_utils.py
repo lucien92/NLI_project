@@ -5,8 +5,7 @@ import torch
 from sklearn.preprocessing import LabelEncoder
 import yaml
 
-config = yaml.safe_load(open("project/config.yml", "r"))
-tokenizer_config = config["tokenizer"]
+
 
 class Filter(TransformerMixin, BaseEstimator):
     def __init__(self) -> None:
@@ -25,7 +24,7 @@ class PreProcessor(TransformerMixin, BaseEstimator):
     def __init__(
         self,
         model_name="sentence-transformers/all-MiniLM-L6-v2",
-        max_length=tokenizer_config["max_length"], # max length des phrases lues des inputs du modèle qu'on a choisi
+        max_length=128, # max length des phrases lues des inputs du modèle qu'on a choisi
         truncation=True,
         padding=True,
     ) -> None:

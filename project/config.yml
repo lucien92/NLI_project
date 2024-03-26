@@ -14,4 +14,4 @@ tokenizer:
 wandb_config:
   project: "huggingface"
   entity: "NLI_Project"
-  #api: "f3b43f15e4b9d81f71b4be703dcc32e5d01189f2"
+  api: "f3b43f15e4b9d81f71b4be703dcc32e5d01189f2"
