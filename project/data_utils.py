@@ -66,3 +66,6 @@ class PreProcessor(TransformerMixin, BaseEstimator):
         ] #on crée un dictionnaire avec les inputs, les labels et les masks
 
         return dataset_data, labels 
+    
+    def decode_sentence(self, sentence):
+        return self.tokenizer.decode(sentence, skip_special_tokens=False)
