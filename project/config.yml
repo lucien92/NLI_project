@@ -2,18 +2,15 @@ training_config:
   model_name: "sentence-transformers/all-MiniLM-L6-v2"
   num_labels: "3"
   output_dir: "project/results"
-  train_dataset: ""
-  valid_dataset: ""
-  test_dataset: ""
-  batch_size: ""
-  epochs: ""
-  learning_rate: ""
-  seed: ""
-  max_length: ""
-  warmup_steps: "500"
+  batch_size: 8
+  epochs: 5
+  learning_rate: 0.0001
+  seed: 42
+  max_length: 128
+  warmup_steps: 500
 
 tokenizer:
-  max_length: "384"
+  max_length: 384
 
 wandb_config:
   project: "diarization_finetuning_ina"
