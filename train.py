@@ -19,9 +19,10 @@ if __name__ == "__main__":
     config = yaml.safe_load(open("project/config.yml", "r"))
     tokenizer_config = config["tokenizer"]
     training_config = config["training_config"]
+    model_name=training_config["model_name"]
     
     filter = Filter()
-    preprocessor = PreProcessor(max_length=tokenizer_config["max_length"], model_name=training_config["model_name"])
+    preprocessor = PreProcessor(max_length=tokenizer_config["max_length"], model_name=model_name)
 
     train_dataset_filtered = filter.transform(train_dataset)
     test_dataset_filtered = filter.transform(test_dataset)
@@ -32,7 +33,7 @@ if __name__ == "__main__":
     validation_dataset_processed, labels_val = preprocessor.transform(validation_dataset_filtered)
 
 
-    model_name=training_config["model_name"] 
+    
     num_labels=training_config["num_labels"] 
     output_dir = training_config["output_dir"]
 
