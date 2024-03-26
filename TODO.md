@@ -18,6 +18,8 @@ Transformers à utiliser
 
 [lien vers modèle hugging face](https://huggingface.co/models?dataset=dataset:multi_nli)
 
+[Lien pour savoir load des checkpoints depuis un modèle hugginface entrainé avec le trainer](https://discuss.huggingface.co/t/trainer-load-best-model-at-end-doesnt-load-the-best-model/32206)
+
 All-mini-v6: This is a sentence-transformers model: It maps sentences & paragraphs to a 384 dimensional dense vector space and can be used for tasks like clustering or semantic search.
 
 
@@ -47,6 +49,8 @@ Les labels sont 0, 1 ou 2
 
 Faire un notebook où l'utilisateur rentre 2 phrases et on applique le modèle pour faire une prédiction.
 
+
 4) Mettre des insights visuels du modèle, de son utilisation de l'attention...❌
 
-5) Expliquer les choix de tous les hyperparamètres, de notre modèle...
+
+5) Expliquer les choix de tous les hyperparamètres, de notre modèle...❌
