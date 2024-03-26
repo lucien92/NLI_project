@@ -39,6 +39,14 @@ Les labels sont 0, 1 ou 2
 
 - gérer les warnings ❌
 
+- choisir un optimizer ✅ prend AdamW par défaut et ok
+
+-essayer SGD en créant une classe qui hérite de Trainer et en mettant cette classe à la place de trainer dans model
+
+3) Play with the model
+
+Faire un notebook où l'utilisateur rentre 2 phrases et on applique le modèle pour faire une prédiction.
+
 3) Rapport ❌
 
 - Visualisation du mécanisme d'attention ❌

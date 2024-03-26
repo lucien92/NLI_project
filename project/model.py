@@ -8,7 +8,7 @@ from torch.utils.data import DataLoader
 import wandb
 
 class allMiniLMModel:
-    def __init__(self, model_name, num_labels, output_dir, train_dataset, valid_dataset, test_dataset, batch_size, epochs, learning_rate, seed, warmup_steps, wandb_project_name=None, wandb_api_key=None, wandb_entity=None):
+    def __init__(self, model_name, num_labels, output_dir, train_dataset, valid_dataset, test_dataset, batch_size, epochs, learning_rate, seed, warmup_steps, weight_decay, wandb_project_name=None, wandb_api_key=None, wandb_entity=None):
         self.model_name = model_name
         self.num_labels = num_labels
         self.output_dir = output_dir
@@ -22,6 +22,7 @@ class allMiniLMModel:
         self.wandb_project_name = wandb_project_name
         self.warmup_steps = warmup_steps
         self.wandb_entity = wandb_entity
+        self.weight_decay = weight_decay
 
           
         if wandb_api_key:
@@ -65,7 +66,7 @@ class allMiniLMModel:
             per_device_train_batch_size=self.batch_size,
             per_device_eval_batch_size=self.batch_size,
             warmup_steps=self.warmup_steps,
-            weight_decay=0.01,
+            weight_decay=self.weight_decay,
             logging_dir='./logs',
             logging_steps=10,
             evaluation_strategy="steps",
@@ -80,6 +81,7 @@ class allMiniLMModel:
             compute_metrics=self._compute_metrics,
             train_dataset=self.train_dataset,
             eval_dataset=self.valid_dataset
+            
         )
         return trainer
     

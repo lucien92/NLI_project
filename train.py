@@ -44,12 +44,12 @@ if __name__ == "__main__":
     learning_rate=training_config["learning_rate"] 
     seed=training_config["seed"] 
     warmup_steps=training_config["warmup_steps"] #grosses variations de learning rate au début
-    #weight_decay=training_config["weight_decay"] #poids de la régularisation L2
+    weight_decay=training_config["weight_decay"] #poids de la régularisation L2
 
     config_wandb = config["wandb_config"]
     wandb_project_name=config_wandb["project"]
     wandb_entity = config_wandb["entity"]
     
  # %%
-model = allMiniLMModel(model_name, num_labels, output_dir, train_dataset_processed, validation_dataset_processed, test_dataset_processed, batch_size, epochs, learning_rate, seed, warmup_steps,wandb_project_name=wandb_project_name, wandb_entity=wandb_entity, wandb_api_key=None)
+model = allMiniLMModel(model_name, num_labels, output_dir, train_dataset_processed, validation_dataset_processed, test_dataset_processed, batch_size, epochs, learning_rate, seed, warmup_steps,weight_decay,wandb_project_name=wandb_project_name, wandb_entity=wandb_entity, wandb_api_key=None)
 
