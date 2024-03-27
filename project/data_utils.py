@@ -23,7 +23,7 @@ class Filter(TransformerMixin, BaseEstimator):
 class PreProcessor(TransformerMixin, BaseEstimator):
     def __init__(
         self,
-        model_name="sentence-transformers/all-MiniLM-L6-v2",
+        model_name="",
         max_length=128, # max length des phrases lues des inputs du modèle qu'on a choisi
         truncation=True,
         padding=True,

@@ -49,6 +49,11 @@ Les labels sont 0, 1 ou 2
 
 Faire un notebook où l'utilisateur rentre 2 phrases et on applique le modèle pour faire une prédiction.
 
+Courbes Wandb et leurs modèles, avec les best performances
+
+all-MiniLM-L6-v2
+Bert-cased
+Roberta
 
 4) Mettre des insights visuels du modèle, de son utilisation de l'attention...❌
 
