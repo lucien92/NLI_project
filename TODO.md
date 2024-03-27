@@ -33,7 +33,7 @@ Les labels sont 0, 1 ou 2
 
 - wandb ✅
 
-- script pour les sbatch ❌
+- script pour les sbatch ✅ 
 
 - essayer Roberta ❌
 
@@ -51,11 +51,11 @@ Faire un notebook où l'utilisateur rentre 2 phrases et on applique le modèle p
 
 Courbes Wandb et leurs modèles, avec les best performances
 
-all-MiniLM-L6-v2
-Bert-cased
+all-MiniLM-L6-v2✅
+Bert-cased✅
 Roberta
 
-4) Mettre des insights visuels du modèle, de son utilisation de l'attention...❌
+4) Mettre des insights visuels du modèle, de son utilisation de l'attention...✅
 
 
-5) Expliquer les choix de tous les hyperparamètres, de notre modèle...❌
+5) Expliquer les choix de tous les hyperparamètres, de notre modèle dans un beau readme ❌

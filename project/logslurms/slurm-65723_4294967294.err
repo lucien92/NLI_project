@@ -1,0 +1,93 @@
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+wandb: Currently logged in as: lucien-rondier (NLI_Project). Use `wandb login --relogin` to force relogin
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+wandb: Tracking run with wandb version 0.16.5
+wandb: Run data is saved locally in /usr/users/sdi-labworks-2023-2024/sdi-labworks-2023-2024_32/NLI_project/wandb/run-20240327_112729-84qsia94
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run young-serenity-12
+wandb: ⭐️ View project at https://wandb.ai/NLI_Project/huggingface
+wandb: 🚀 View run at https://wandb.ai/NLI_Project/huggingface/runs/84qsia94/workspace
+Some weights of RobertaForSequenceClassification were not initialized from the model checkpoint at FacebookAI/roberta-large and are newly initialized: ['classifier.dense.bias', 'classifier.dense.weight', 'classifier.out_proj.bias', 'classifier.out_proj.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/usr/users/sdi-labworks-2023-2024/sdi-labworks-2023-2024_32/NLI_project/venv/lib/python3.8/site-packages/accelerate/accelerator.py:432: FutureWarning: Passing the following arguments to `Accelerator` is deprecated and will be removed in version 1.0 of Accelerate: dict_keys(['dispatch_batches', 'split_batches', 'even_batches', 'use_seedable_sampler']). Please pass an `accelerate.DataLoaderConfiguration` instead: 
+dataloader_config = DataLoaderConfiguration(dispatch_batches=None, split_batches=False, even_batches=True, use_seedable_sampler=True)
+  warnings.warn(
+  0%|          | 0/85840 [00:00<?, ?it/s]  0%|          | 1/85840 [00:03<82:43:26,  3.47s/it]wandb: - 0.002 MB of 0.002 MB uploadedwandb: \ 0.002 MB of 0.002 MB uploadedwandb: | 0.002 MB of 0.002 MB uploadedwandb: / 0.026 MB of 0.044 MB uploaded (0.002 MB deduped)wandb: - 0.042 MB of 0.044 MB uploaded (0.002 MB deduped)wandb: \ 0.042 MB of 0.044 MB uploaded (0.002 MB deduped)wandb: | 0.042 MB of 0.044 MB uploaded (0.002 MB deduped)wandb: / 0.044 MB of 0.044 MB uploaded (0.002 MB deduped)wandb: 🚀 View run young-serenity-12 at: https://wandb.ai/NLI_Project/huggingface/runs/84qsia94/workspace
+wandb: Synced 5 W&B file(s), 0 media file(s), 2 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240327_112729-84qsia94/logs
+Traceback (most recent call last):
+  File "train.py", line 54, in <module>
+    model = allMiniLMModel(model_name, num_labels, output_dir, train_dataset_processed, validation_dataset_processed, test_dataset_processed, batch_size, epochs, learning_rate, seed, warmup_steps,weight_decay,wandb_project_name=wandb_project_name, wandb_entity=wandb_entity, wandb_api_key=None)
+  File "/usr/users/sdi-labworks-2023-2024/sdi-labworks-2023-2024_32/NLI_project/project/model.py", line 53, in __init__
+    self.train()
+  File "/usr/users/sdi-labworks-2023-2024/sdi-labworks-2023-2024_32/NLI_project/project/model.py", line 98, in train
+    self.trainer.train()
+  File "/usr/users/sdi-labworks-2023-2024/sdi-labworks-2023-2024_32/NLI_project/venv/lib/python3.8/site-packages/transformers/trainer.py", line 1780, in train
+    return inner_training_loop(
+  File "/usr/users/sdi-labworks-2023-2024/sdi-labworks-2023-2024_32/NLI_project/venv/lib/python3.8/site-packages/transformers/trainer.py", line 2118, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/usr/users/sdi-labworks-2023-2024/sdi-labworks-2023-2024_32/NLI_project/venv/lib/python3.8/site-packages/transformers/trainer.py", line 3036, in training_step
+    loss = self.compute_loss(model, inputs)
+  File "/usr/users/sdi-labworks-2023-2024/sdi-labworks-2023-2024_32/NLI_project/venv/lib/python3.8/site-packages/transformers/trainer.py", line 3059, in compute_loss
+    outputs = model(**inputs)
+  File "/usr/users/sdi-labworks-2023-2024/sdi-labworks-2023-2024_32/NLI_project/venv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/users/sdi-labworks-2023-2024/sdi-labworks-2023-2024_32/NLI_project/venv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/users/sdi-labworks-2023-2024/sdi-labworks-2023-2024_32/NLI_project/venv/lib/python3.8/site-packages/transformers/models/roberta/modeling_roberta.py", line 1198, in forward
+    outputs = self.roberta(
+  File "/usr/users/sdi-labworks-2023-2024/sdi-labworks-2023-2024_32/NLI_project/venv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/users/sdi-labworks-2023-2024/sdi-labworks-2023-2024_32/NLI_project/venv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/users/sdi-labworks-2023-2024/sdi-labworks-2023-2024_32/NLI_project/venv/lib/python3.8/site-packages/transformers/models/roberta/modeling_roberta.py", line 835, in forward
+    encoder_outputs = self.encoder(
+  File "/usr/users/sdi-labworks-2023-2024/sdi-labworks-2023-2024_32/NLI_project/venv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/users/sdi-labworks-2023-2024/sdi-labworks-2023-2024_32/NLI_project/venv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/users/sdi-labworks-2023-2024/sdi-labworks-2023-2024_32/NLI_project/venv/lib/python3.8/site-packages/transformers/models/roberta/modeling_roberta.py", line 524, in forward
+    layer_outputs = layer_module(
+  File "/usr/users/sdi-labworks-2023-2024/sdi-labworks-2023-2024_32/NLI_project/venv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/users/sdi-labworks-2023-2024/sdi-labworks-2023-2024_32/NLI_project/venv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/users/sdi-labworks-2023-2024/sdi-labworks-2023-2024_32/NLI_project/venv/lib/python3.8/site-packages/transformers/models/roberta/modeling_roberta.py", line 413, in forward
+    self_attention_outputs = self.attention(
+  File "/usr/users/sdi-labworks-2023-2024/sdi-labworks-2023-2024_32/NLI_project/venv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/users/sdi-labworks-2023-2024/sdi-labworks-2023-2024_32/NLI_project/venv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/users/sdi-labworks-2023-2024/sdi-labworks-2023-2024_32/NLI_project/venv/lib/python3.8/site-packages/transformers/models/roberta/modeling_roberta.py", line 340, in forward
+    self_outputs = self.self(
+  File "/usr/users/sdi-labworks-2023-2024/sdi-labworks-2023-2024_32/NLI_project/venv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/users/sdi-labworks-2023-2024/sdi-labworks-2023-2024_32/NLI_project/venv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/users/sdi-labworks-2023-2024/sdi-labworks-2023-2024_32/NLI_project/venv/lib/python3.8/site-packages/transformers/models/roberta/modeling_roberta.py", line 220, in forward
+    value_layer = self.transpose_for_scores(self.value(hidden_states))
+  File "/usr/users/sdi-labworks-2023-2024/sdi-labworks-2023-2024_32/NLI_project/venv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/users/sdi-labworks-2023-2024/sdi-labworks-2023-2024_32/NLI_project/venv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/users/sdi-labworks-2023-2024/sdi-labworks-2023-2024_32/NLI_project/venv/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 116, in forward
+    return F.linear(input, self.weight, self.bias)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 16.00 MiB. GPU 0 has a total capacity of 10.91 GiB of which 6.38 MiB is free. Including non-PyTorch memory, this process has 10.90 GiB memory in use. Of the allocated memory 10.27 GiB is allocated by PyTorch, and 78.25 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
