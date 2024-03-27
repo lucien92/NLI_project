@@ -6,3 +6,4 @@ scikit-learn
 transformers
 wandb
 python-dotenv
+matplotlib
