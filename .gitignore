@@ -9,3 +9,5 @@ wandb
 results
 
 .env
+
+logslurm
