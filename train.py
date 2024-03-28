@@ -1,4 +1,3 @@
-#%%
 from datasets import load_dataset
 import numpy as np
 import pandas as pd
@@ -50,6 +49,5 @@ if __name__ == "__main__":
     wandb_project_name=config_wandb["project"]
     wandb_entity = config_wandb["entity"]
     
- # %%
-model = allMiniLMModel(model_name, num_labels, output_dir, train_dataset_processed, validation_dataset_processed, test_dataset_processed, batch_size, epochs, learning_rate, seed, warmup_steps,weight_decay,wandb_project_name=wandb_project_name, wandb_entity=wandb_entity, wandb_api_key=None)
+    model = allMiniLMModel(model_name, num_labels, output_dir, train_dataset_processed, validation_dataset_processed, test_dataset_processed, batch_size, epochs, learning_rate, seed, warmup_steps,weight_decay,wandb_project_name=wandb_project_name, wandb_entity=wandb_entity, wandb_api_key=None)
 
