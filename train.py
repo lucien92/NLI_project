@@ -7,6 +7,7 @@ from project.model import allMiniLMModel
 from project.data_utils import PreProcessor, Filter
 from datasets import load_dataset
 from dotenv import load_dotenv
+import json
 
 if __name__ == "__main__":
     load_dotenv()
@@ -21,9 +22,13 @@ if __name__ == "__main__":
     tokenizer_config = config["tokenizer"]
     training_config = config["training_config"]
     model_name=training_config["model_name"]
+    tok_model_name = model_name
+    if "project/results" in model_name:
+        json_config = json.load(open(model_name + "/config.json", "r"))
+        tok_model_name = json_config["_name_or_path"]
     
     filter = Filter()
-    preprocessor = PreProcessor(max_length=tokenizer_config["max_length"], model_name=model_name)
+    preprocessor = PreProcessor(max_length=tokenizer_config["max_length"], model_name=tok_model_name)
 
     train_dataset_filtered = filter.transform(train_dataset)
     test_dataset_filtered = filter.transform(test_dataset)

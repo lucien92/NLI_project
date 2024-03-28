@@ -47,11 +47,12 @@ class allMiniLMModel:
         
         self.model = self._load_model()
         self.trainer = self._load_trainer()
-        self.train_dataloader = self._load_dataloader(self.train_dataset)
-        self.valid_dataloader = self._load_dataloader(self.valid_dataset)
-        self.test_dataloader = self._load_dataloader(self.test_dataset)
-        self.train()
-        #self.test()
+        try:
+            if self.epochs > 0:
+                self.train()
+        except:
+            pass
+        self.test()
     
     def _load_model(self):
         config = AutoConfig.from_pretrained(self.model_name, num_labels=self.num_labels)
@@ -98,6 +99,6 @@ class allMiniLMModel:
         self.trainer.train()
     
     def test(self):
-        result = self.trainer.evaluate(self.test_dataloader)
+        result = self.trainer.evaluate(eval_dataset=self.test_dataset)
         if self.wandb_project_name:
             wandb.log(result)
