@@ -50,8 +50,8 @@ class allMiniLMModel:
         try:
             if self.epochs > 0:
                 self.train()
-        except:
-            pass
+        except Exception as e:
+            print(f"Error occurred during training: {str(e)}")
         self.test()
     
     def _load_model(self):
