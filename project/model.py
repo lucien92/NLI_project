@@ -73,6 +73,7 @@ class allMiniLMModel:
             evaluation_strategy="steps",
             eval_steps=10,
             save_steps=100,
+            save_total_limit=5,
             seed=self.seed,
             report_to="wandb"  # Ensure wandb is used for logging
         )
