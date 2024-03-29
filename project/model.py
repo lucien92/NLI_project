@@ -103,3 +103,4 @@ class allMiniLMModel:
         result = self.trainer.evaluate(eval_dataset=self.test_dataset)
         if self.wandb_project_name:
             wandb.log(result)
+        print("Test accuracy: ", result["eval_accuracy"])

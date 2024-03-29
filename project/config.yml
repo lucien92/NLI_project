@@ -1,9 +1,13 @@
 training_config:
-  model_name: "FacebookAI/roberta-large"
+  model_name: "sentence-transformers/all-MiniLM-L6-v2"
+  epochs: 5
+  # To evaluate the model on the test set, put the path to the model checkpoint here
+  # and set the number of epochs to 0
+  # model_name: "project/results/checkpoint-21400"
+  # epochs: 0
   num_labels: 3
   output_dir: "project/results"
   batch_size: 128
-  epochs: 5
   learning_rate: 0.0001
   seed: 42
   warmup_steps: 500
