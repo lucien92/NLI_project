@@ -35,9 +35,9 @@ Les labels sont 0, 1 ou 2
 
 - script pour les sbatch ✅ 
 
-- essayer Roberta ❌
+- essayer Roberta ~ 
 
-- faire finetune d'hyperparamètres ❌
+- faire finetune d'hyperparamètres ✅
 
 - gérer les warnings ❌
 
@@ -58,4 +58,4 @@ Roberta
 4) Mettre des insights visuels du modèle, de son utilisation de l'attention...✅
 
 
-5) Expliquer les choix de tous les hyperparamètres, de notre modèle dans un beau readme ❌
+5) Expliquer les choix de tous les hyperparamètres, de notre modèle dans un beau readme ✅
