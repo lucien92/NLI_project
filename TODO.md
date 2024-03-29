@@ -35,11 +35,9 @@ Les labels sont 0, 1 ou 2
 
 - script pour les sbatch ✅ 
 
-- essayer Roberta ~ 
+- essayer Roberta ✅  - pas de bonnes performances
 
 - faire finetune d'hyperparamètres ✅
-
-- gérer les warnings ❌
 
 - choisir un optimizer ✅ prend AdamW par défaut et ok
 
