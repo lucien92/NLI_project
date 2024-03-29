@@ -47,6 +47,8 @@ Pour le choix du modèle nous nous sommes inspiré de la documentation suivante,
 
 ![Accuracy Curces](assets/wandb-acc.png)
 
+* Comme vous pouvez le voir, on a atteint une accuracy d'evaluation de **0.9** avec all-MiniLM-L6-v2, le test nous donne un score de **0.89** (voir le notebook **test**).
+
 * Nous avons choisi l'optimizer AdamW au vu des bonnes performances qu'il présentait en comparaison de SGD.
 
 * Enfin pour la métrique, comme nous avons afaire à une  tâche de classification nous avons trouvé pertinent de prendre l'accuracy.
